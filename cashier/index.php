@@ -26,8 +26,8 @@
             require_once "../config/db.php";
             $sql = "SELECT * FROM meja";
             $result = $conn->query($sql);
-            while($row = $result->fetch_assoc()){ 
-                // jika blm terisi  
+            while($row = $result->fetch_assoc()){
+                // jika blm terisi
                 if(!$row['nama_pengguna']){
         ?>
             <div class="item" onclick="clickMe('<?= $url ?>','<?= $row['id']?>','<?= $row['nama']?>')">
@@ -42,14 +42,14 @@
                 <p><?php echo $row["nama_pengguna"]? "Nama : " . $row["nama_pengguna"] : ''  ?></p>
                 <p><?= $row["jumlah_orang"]?> Orang</p>
                 <p><?php echo $row["status"]? 'Sudah Pesan' : 'Belum Pesan' ?></p>
-            </div>      
+            </div>
         <?php }else{ ?>
             <div class="item sudah-terisi" onclick="sudahPesan('<?= $url ?>','<?= $row['id']?>','<?= $row['nama']?>')">
                 <b><?= $row["nama"]?></b>
                 <p><?php echo $row["nama_pengguna"]? "Nama : " . $row["nama_pengguna"] : ''  ?></p>
                 <p><?= $row["jumlah_orang"]?> Orang</p>
                 <p><?php echo $row["status"]? 'Sudah Pesan' : 'Belum Pesan' ?></p>
-            </div>            
+            </div>
         <?php }} ?>
         </div>
     </div>

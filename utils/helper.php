@@ -3,10 +3,11 @@
 
 
 function rootLocation(){
-    $hostname = $_SERVER['SERVER_NAME'];
+    $servername = $_SERVER['SERVER_NAME'];
     $protocol = strtolower(str_split($_SERVER['SERVER_PROTOCOL'],4)[0]);
-    $branchName = "wildanresto";
-    $url = "$protocol://$hostname/$branchName";
+   // $folder_name = "folder_name" {optional}
+    // if using folder_name => "$protocol://$servername/$folder_name";
+    $url = "$protocol://$servername";
     return $url;
 }
 
