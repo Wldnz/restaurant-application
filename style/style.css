@@ -1,0 +1,443 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+:root{
+    --primary-color : rgb(17, 17, 73);
+    --glass-background-color : rgba(255,255,255,.3);
+}
+
+body{
+    font-size: 18px; 
+    background-color: var(--primary-color) ;
+    color: white;
+}
+
+
+nav{
+    /* height: 40px; */
+    padding: 20px 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    box-shadow: 0 2px 5px black;
+    margin-bottom: 20px;
+}
+
+nav > ul{
+    list-style: none;
+    display: flex;
+    gap: 10px;
+}
+
+nav  a{
+    color: inherit;
+    text-decoration: none;
+}
+
+
+.container,
+.login,
+.fieldInput{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.container{
+    width: 100%;
+    min-height: 95vh;
+   
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    
+}
+
+.container > form{
+    background-color: var(--glass-background-color);
+    width: 380px;
+    padding: 20px 10px;
+    border-radius: 5px;
+}
+
+.fieldInput > input{
+    padding: 10px 10px;
+    font-size: 18px; 
+    border: none;
+    border-radius: 5px;
+}
+
+.fieldInput > input:focus{
+    outline-color: var(--primary-color) ;
+}
+
+
+.fieldInput > :nth-child(3){
+    color: red;
+}
+
+.login > button{
+    font-size: 18px; 
+    padding: 10px;
+    
+    
+    border-radius: 10px;
+    
+    cursor: pointer;
+}
+
+/* dashboard side */
+
+
+.pembungkus{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+}
+
+.pembungkus-item{
+    margin-top: 20px;
+    width: 80%;
+    gap: 15px 20px;
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(2,200px);
+}
+
+.item{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    row-gap: 3px;
+
+    /* max-width: 140px; */
+    padding: 10px;
+    height: 100px;
+
+    background-color: var(--glass-background-color);
+    /* color: #43400c; */
+    /* box-shadow: 0 0 5px rgb(208, 208, 161) inset; */
+    border-radius: 5px;
+
+    cursor: pointer;
+}
+
+
+.sudah-terisi{
+    background-color: rgb(28, 125, 125) !important;
+    color: white !important;
+    /* cursor: not-allowed; */
+}
+
+.belum-pesan{
+    background-color: rgba(185, 157, 42, 1) !important;
+    color: white !important;
+    /* cursor: not-allowed; */
+}
+
+.item:hover{
+    box-shadow: 0 0 10px white;
+    background-color: green;
+}
+
+.sudah-terisi:hover{
+    background-color: red !important;
+}
+
+.belum-pesan:hover{
+    background-color: yellow !important;
+    color: gray !important;
+}
+
+
+.item > p{
+    font-size: 14px;
+}
+
+
+/* detailMeja */
+
+.main{
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    width: 100%;
+    padding: 5px 20px
+}
+
+.left{
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.searchBar{
+    width: 90%;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 10px;
+    
+}
+
+.searchBar > input,
+.searchBar > button{
+    filter: drop-shadow(0 0 5px black);
+    border-radius: 5px;
+    border: none;
+}
+
+.searchBar > input{
+
+    width: 80%;
+    padding: 10px;
+    
+    border: 0.5px solid var(--primary-color);
+   
+}
+
+.searchBar > button{
+    padding: 10px 20px;
+   
+    background-color: var(--primary-color);
+    color: white;
+   
+    cursor: pointer;
+}
+
+.searchBar > button:hover{
+    filter: drop-shadow(0 0 5px white);
+}
+
+.filter-makanan >  select{
+    margin-top: 20px;
+    padding: 8px;
+    cursor: pointer ;
+    max-width:max-content;
+}
+
+.pembungkus-card{
+    margin-top: 20px;
+    width: 100% ;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.card-produk {
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--glass-background-color);
+    border-top-right-radius: 5px ;
+    border-top-left-radius: 5px ;
+    height: 250px;
+}
+
+.card-produk > img{
+    border-top-right-radius: 5px ;
+    border-top-left-radius: 5px ;
+    /* margin-top: 1px; */
+    object-fit: cover;
+    width: 100%;
+    height: 150px;
+}
+
+.card-produk > .deskripsi{
+    padding: 5px 10px;
+}
+
+.deskripsi > button{
+  margin-top: 10px;
+  width: 100%;
+  padding: 6px;
+  cursor: pointer;
+}
+
+/* right side */
+
+.right{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 5px;
+}
+
+.pengguna-data{
+    background-color: rgba(0,0,0,.3);
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.pengguna-data > a{
+    color: inherit;
+    /* text-decoration: none; */
+}
+
+
+.list-makanan{
+    padding-top: 10px;
+    min-width: 380px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+
+    background-color: rgba(255,255,255,.3);
+    border-radius: 10px;
+}
+
+.pembungkus-pesanan{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    /* background-color: aqua; */
+   
+    height: 270px;
+    max-height: 175px;
+    padding: 5px 10px;
+
+    overflow: hidden;
+    overflow-y: scroll;
+    scrollbar-width: none;
+}
+
+
+.pesanan{
+    width: 300px;
+    display: flex;
+    align-items: center;
+    justify-content:space-between;
+    gap: 5px;
+    position: relative;
+
+    padding: 4px 10px;
+    background-color: rgba(0,0,0,.5);
+    color: white;
+
+}
+
+.pesanan > img{
+    /* width: 80px; */
+
+    height: 40px;
+}
+
+.pesanan > .profile-makanan{
+    font-size: 16px;
+    /* background-color: red; */
+}
+
+.pesanan > .profile-makanan > b{
+    font-size: 12px;
+}
+
+.kurangTambah > input{
+    width: 30px;
+    height: 25px;
+    text-align: center;
+    border: none;
+}
+
+
+.kurangTambah > input:focus{
+    outline: none;
+    border: none;
+}
+
+.kurangTambah > button{
+    width: 30px;
+    height: 23px;
+    cursor: pointer;
+    border: none;
+    /* padding: 3px; */
+    font-size: 18px;
+    color: white;
+}
+
+.kurangTambah > button:nth-child(1){
+    background: red;
+}
+
+.kurangTambah > button:nth-child(3){
+    background: aqua;
+}
+
+.kurangTambah > button[name=close_btn]{
+    width: 30px;
+    height: 30px;
+
+    background-color: red;
+    color: white;
+    
+    border-radius: 50%;
+    scale: .6;
+    position: absolute;
+    right: -15px;
+    top: -10px;
+    cursor: pointer;
+}
+
+.harga{
+    width: 100%;
+    padding: 10px;
+    text-align: start;
+    background-color: var(--primary-color);
+    border-bottom-left-radius: 10px;
+   border-bottom-right-radius: 10px;
+   box-shadow : 1px 2px 1px white;
+}
+
+.btn-wrapper{
+    margin-top: 10px;
+}
+
+.btn{
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    /* font-weight: 600; */
+    color: black;
+}
+
+.btn-add{
+    background-color: greenyellow;
+}
+
+.btn-upd{
+    background-color: yellowgreen;
+}
+.btn-clr{
+    background-color: red;
+}
+
+.btn-warn{
+    background-color: yellow;
+    font-weight: 600;
+}
+
+
+/* laporan-side */
+
+tr,td,th{
+    border-bottom: 1px solid white;
+    text-align: center;
+}
+
+td,th{
+    padding: 10px;
+}
+
+td{
+    font-size: 20px;
+}
