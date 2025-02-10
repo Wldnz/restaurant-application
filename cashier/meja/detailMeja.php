@@ -3,7 +3,7 @@
     require_once '../../utils/helper.php';
     require_once '../../model/cart.php';
     session_start();
-    validateLogin();
+    if(!isCashier()) goToLoginPage();
     if(!isset($_SESSION['cart'])) $_SESSION['cart'] = [];
     if(!isset($_GET["id"]) && !isset($_SESSION["currentMeja"])|| empty($_GET["id"]) && !isset($_SESSION["currentMeja"])) return goToCashierPage();
    
@@ -91,20 +91,6 @@
     }
 
      //end function pesanan
-     function getKategoriProduk(){
-        $sqlProduk = "select * from produk";
-        if(isset($_GET["kategori"])){
-            $kategori = $_GET['kategori'];
-            if($kategori == 'minuman' || $kategori == 'makanan'){
-                $sqlProduk = "SELECT * from produk where kategori='$kategori'";
-           }
-        }else if(isset($_GET["produk"]) && !empty($_GET["produk"])){
-            $produk = $_GET["produk"];
-            $sqlProduk = "SELECT * from produk where nama like '%$produk%'";
-        }
-        return $sqlProduk;
-       }   
-
        function getHarga(){
         $harga = 0;
         $carts = $_SESSION['cart'];

@@ -5,7 +5,7 @@
     session_start();
     require_once '../utils/helper.php';
     $url = rootLocation();
-    validateLogin();
+    if(!isCashier()) goToLoginPage();
 ?>
 
 <!DOCTYPE html>

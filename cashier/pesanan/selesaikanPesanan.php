@@ -4,7 +4,7 @@
     require_once '../../config/db.php';
     require_once '../../utils/helper.php';
     session_start();
-    validateLogin();
+    if(!isCashier()) goToLoginPage();
     $url = rootLocation();
 
     if(!isset($_GET["id"]) || empty($_GET["id"]) || !isset($_GET["status"]) || empty($_GET["status"]) || !isset($_GET["harga"]) || empty($_GET["harga"]) ) return goToCashierPage();

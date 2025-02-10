@@ -5,7 +5,9 @@
     $information_username = "";
     $information_password = "";
 
-    if(isset($_SESSION["isLogin"]) && $_SESSION["isLogin"]) return goToCashierPage();
+    if(isset($_SESSION["isLogin"]) && $_SESSION["isLogin"]){
+        redirectTo();
+    };
     $url = rootLocation();
     function validateForm($username,$password){
         if(empty($username) && empty($password)){ 
@@ -34,7 +36,6 @@
 
             // sha256
             $hash_pw = hash("sha256",$password);
-
             $sql = "SELECT * FROM pengguna where nama = '$username' and password='$hash_pw'";
             $result = $conn->query($sql)->fetch_assoc();
             if(!$result){
@@ -45,8 +46,9 @@
                     $_SESSION["name"] = $result["nama"];
                     $_SESSION["role"] = $result['role'];
                     $_SESSION["isLogin"] = true;
+                    echo $result["role"];
                     $conn->close();
-                    goToCashierPage(); 
+                    redirectTo();
                 }
             }
            
@@ -55,6 +57,12 @@
         header("Location: $url");
     }
 
+    function redirectTo(){
+        if(isCashier()) 
+        return goToCashierPage(); 
+        else 
+        return goToAdminPage();
+    }
 
 
 ?>

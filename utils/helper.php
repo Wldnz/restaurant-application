@@ -10,6 +10,17 @@ function rootLocation(){
     return $url;
 }
 
+function isAdmin(){
+    validateLogin();
+    if(isset($_SESSION["isLogin"]) && $_SESSION["role"] == "admin") return true;
+    return false;
+}
+function isCashier(){
+    validateLogin();
+    if(isset($_SESSION["isLogin"]) && $_SESSION["role"] == "kasir") return true;
+    return false;
+}
+
 
 function backToDetailMeja($id,$status){
     header("Location: ". rootLocation()."/cashier/meja/detailMeja.php?id=$id&status=$status");
@@ -32,12 +43,23 @@ function updateDetailPesanan($currentMeja,$id_meja,$nama,$jumlah,$mysql){
 
   function validateLogin(){
     $url = rootLocation();
-    if(!isset($_SESSION["isLogin"]) || !$_SESSION["isLogin"]) return header("Location: $url/login.php");
+    if(!isset($_SESSION["isLogin"]) || !$_SESSION["isLogin"]) return goToLoginPage();
   }
 
   function goToCashierPage(){
     $url = rootLocation()."/cashier";
     header("Location: $url");
+    die();
+  }
+  function goToAdminPage(){
+    $url = rootLocation()."/admin";
+    header("Location: $url");
+    die();
+  }
+  function goToLoginPage(){
+    $url = rootLocation()."/login.php";
+    header("Location: $url");
+    die();
   }
 
   function insertIntoDetailPesanan($id,$nama,$jumlah,$status,$mysql){
@@ -132,3 +154,19 @@ function clearAllProduct($idDetailPesanan,$idMeja,$mysql){
     $mysql->query("DELETE from detailpesanan where id='$idDetailPesanan'");
     $mysql->query("UPDATE meja set status ='0' where id='$idMeja'");
 }
+
+
+
+function getKategoriProduk(){
+    $sqlProduk = "select * from produk";
+    if(isset($_GET["kategori"])){
+        $kategori = $_GET['kategori'];
+        if($kategori == 'minuman' || $kategori == 'makanan'){
+            $sqlProduk = "SELECT * from produk where kategori='$kategori'";
+       }
+    }else if(isset($_GET["produk"]) && !empty($_GET["produk"])){
+        $produk = $_GET["produk"];
+        $sqlProduk = "SELECT * from produk where nama like '%$produk%'";
+    }
+    return $sqlProduk;
+   } 

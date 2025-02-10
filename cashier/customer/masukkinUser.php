@@ -3,7 +3,7 @@
     session_start();
     require_once "../../config/db.php";
     require_once "../../utils/helper.php";
-    validateLogin();
+    if(!isCashier()) goToLoginPage();
 
     if(!isset($_GET["id"]) || empty($_GET["id"])) return goToCashierPage();
     $information_username = "";

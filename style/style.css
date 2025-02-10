@@ -14,6 +14,7 @@ body{
     font-size: 18px; 
     background-color: var(--primary-color) ;
     color: white;
+    /* min-width: 480px; */
 }
 
 
@@ -81,16 +82,22 @@ nav  a{
     color: red;
 }
 
-.login > button{
+.login > button,
+.login > a{
     font-size: 18px; 
+    font-weight: 400;
     padding: 10px;
-    
+
+    background-color: white;
+    color: black;
     
     border-radius: 10px;
-    
+    border: 1px solid black;
     cursor: pointer;
+    
+    text-decoration: none;
+    text-align: center;
 }
-
 /* dashboard side */
 
 
@@ -232,6 +239,14 @@ nav  a{
     gap: 10px;
 }
 
+.pembungkus-card-2{
+    margin-top: 20px;
+    width: 100% ;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
 .card-produk {
     width: 200px;
     display: flex;
@@ -239,7 +254,7 @@ nav  a{
     background-color: var(--glass-background-color);
     border-top-right-radius: 5px ;
     border-top-left-radius: 5px ;
-    height: 250px;
+    min-height: 250px;
 }
 
 .card-produk > img{
@@ -440,4 +455,29 @@ td,th{
 
 td{
     font-size: 20px;
+}
+
+p-5{
+    padding: 5px;
+}
+
+
+@media screen and (max-width:768px){
+    .main{
+        display: flex;
+        flex-direction: column-reverse;
+    }
+    .pembungkus-card{
+        flex-wrap: nowrap;
+        justify-content: center;
+        max-width:100vw;
+        overflow: hidden;
+        overflow-x: scroll;
+    }
+    .pembungkus-card > *{
+        min-width: 200px;
+    }
+    .pembungkus-card-2{
+        justify-content: center;
+    }
 }

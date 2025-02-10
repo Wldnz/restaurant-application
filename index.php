@@ -47,17 +47,12 @@
         border-radius: 3px;
         max-width: 200px;
         height: 200px;
+        display: flex;
+        flex-direction: column;
     }
 
     .item:hover{
         background-color: blue !important;
-    }
-
-    footer{
-        width: 100%;
-        text-align: end;
-        padding: 0 10px;
-       
     }
 
     a{
@@ -68,6 +63,14 @@
         color:white;
     }
 
+    footer{
+        margin-top: 20px;
+        width: 100%;
+        /* text-align: end; */
+        padding: 0 10px;
+       
+    }
+
 
 </style>
 <body>
@@ -76,7 +79,7 @@
         <h2>Selamat Datang Di Wildan Restaurant!</h2>
         <p>Wildan Resto adalah Kafe yang dimulai oleh dua sepupu asal Indonesia pada tahun 2024. Berbasis di tempat yang paling banyak dikunjungi di Tangerang Selatan,Wildan Resto n menyajikan beragam Makanan, Dessert, dan Minuman Fresh berkualitas tinggi dalam suasana santai dan enjoy.</p>
         <div class="wrapper">
-            <div class="item">
+            <!-- <div class="item">
                 <h3>High-Quality Dishes</h3>
                 <p>Wildan Resto menyajikan makanan dan minuman berkualitas tinggi, dibuat dengan bahan-bahan segar untuk memberikan pengalaman kuliner terbaik.</p>
             </div>
@@ -87,13 +90,21 @@
             <div class="item">
                 <h3>Heart of Tangerang Selatan</h3>
                 <p>Terletak di lokasi strategis, Wildan Resto menjadi destinasi favorit untuk mencicipi berbagai dessert dan minuman segar.</p>
-            </div>
+            </div> -->
+            <div class="login"><a  href="products.php">Lihat Makanan</a></div>
+            <div class="login"><a  href="check-pesanan">Check Pesanan</a></div>
+            
         </div>
     </div>
 
 
-    <footer>
+    <footer class="">
         <a href="login.php">Admin..</a>
     </footer>
+
+    <script>
+        
+    </script>
+
 </body>
 </html>

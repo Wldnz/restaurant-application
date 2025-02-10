@@ -2,6 +2,8 @@
 
 $url = rootLocation();
 
+
+
 ?>
 <nav>
     <!-- Hello, <?= $_SESSION['name']?> -->
@@ -9,7 +11,10 @@ $url = rootLocation();
     <ul>
         
         <li>
-            <a href="<?= "$url/laporan.php" ?>">Laporan</a>
+            <?php echo isAdmin()?"<a href='$url/admin/product?'>Manage Product</a>" : ''?>
+        </li>
+        <li>
+            <?php echo isAdmin()?"<a href='$url/admin/pesanan/laporan.php?'>Laporan</a>" : ''?>
         </li>
         <li>
             <a href="<?= "$url/logout.php" ?>">Log-out</a>
