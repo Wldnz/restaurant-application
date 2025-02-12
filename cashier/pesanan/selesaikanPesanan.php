@@ -14,7 +14,7 @@
     $harga = $conn->real_escape_string($_GET["harga"]);
     if(!$statusPesanan) return goToCashierPage();
     
-    $result = $conn->query("SELECT * FROM detailPesanan where id_meja='$id_meja' and status='0'");
+    $result = $conn->query("SELECT * FROM detailpesanan where id_meja='$id_meja' and status='0'");
     if($result->num_rows > 0){
         $id_detailPesanan = $result->fetch_assoc()["id"];
         $tanggal = date("Y-m-d"); 
