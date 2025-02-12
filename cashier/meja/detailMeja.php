@@ -1,7 +1,7 @@
 <?php
     require_once '../../config/db.php';
     require_once '../../utils/helper.php';
-    require_once '../../model/cart.php';
+    require_once '../../model/Cart.php';
     session_start();
     if(!isCashier()) goToLoginPage();
     if(!isset($_SESSION['cart'])) $_SESSION['cart'] = [];
