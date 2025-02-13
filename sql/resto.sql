@@ -197,6 +197,41 @@ ALTER TABLE `produk`
   ADD UNIQUE KEY `nama` (`nama`);
 
 --
+-- AUTO_INCREMENT untuk tabel `detailpesanan`
+--
+ALTER TABLE `detailpesanan`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT untuk tabel `histori`
+--
+ALTER TABLE `histori`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT untuk tabel `meja`
+--
+ALTER TABLE `meja`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT untuk tabel `pengguna`
+--
+ALTER TABLE `pengguna`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT untuk tabel `pesanan`
+--
+ALTER TABLE `pesanan`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT untuk tabel `produk`
+--
+ALTER TABLE `produk`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
 -- Ketidakleluasaan untuk tabel `detailpesanan`
 --
 ALTER TABLE `detailpesanan`
