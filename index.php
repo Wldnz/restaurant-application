@@ -91,7 +91,7 @@
                 <h3>Heart of Tangerang Selatan</h3>
                 <p>Terletak di lokasi strategis, Wildan Resto menjadi destinasi favorit untuk mencicipi berbagai dessert dan minuman segar.</p>
             </div> -->
-            <div class="login"><a  href="products.php">Lihat Makanan</a></div>
+            <div class="login"><a  href="products.php">Lihat Menu</a></div>
             <div class="login"><a  href="check-pesanan">Check Pesanan</a></div>
             
         </div>
